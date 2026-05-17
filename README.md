@@ -10,13 +10,15 @@ pip install -r requirements.txt
 
 Обычный запуск 2 слойной нейросети:
 ```bash 
-python3 -m sasrec.train \ ```
+python3 -m sasrec.train 
+```
 
 Для пошаговой сборки:
 
 ```bash
-python3 -m sasrec.stack_blocks \
-python3 -m sasrec.train_finetune \ ```
+python3 -m sasrec.stack_blocks 
+python3 -m sasrec.train_finetune
+```
 
 в соответствии с input_rules.txt
 
