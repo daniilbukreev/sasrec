@@ -72,8 +72,12 @@ def download_and_preprocess(dataset_name='ml-20m', output_dir='data', min_intera
     df['item_id'] = df['item_id'].map(item_map)
 
     print(f"Writing preprocessed data to {output_path} ...")
+    counter = 0
     with open(output_path, 'w') as f:
         for _, row in df.iterrows():
+            counter += 1
+            if counter in [10**6, 3 * 10 ** 6, 5 * 10 ** 6, 7 * 10 ** 6, 9 * 10 ** 6, 12 * 10 ** 6, 15 * 10 ** 6, 19 * 10 ** 6]:
+                print(counter, ' !!!')
             f.write(f"{row['user_id']} {row['item_id']}\n")
 
     print(f"  Done! Final stats:")
